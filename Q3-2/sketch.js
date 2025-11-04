@@ -1,6 +1,7 @@
 // 2D アニメーションゲームのようなインタラクション
 let x, y;
 let vx, vy;
+let speed = 1;
 const g = 1;
 
 function setup(){
@@ -19,12 +20,21 @@ function draw(){
   background(160, 192, 255);
   const size = height * 0.1; // キャラクターのサイズ
 
-  // 地面を描く
+   // 地面を描く
   const groundY = height * 0.8;
   fill(64, 192, 64);
-  rect(0, groundY, width, height - groundY);
+  noStroke();
+  rect(0, groundY,width, height-groundY)
 
-  // BLANK[1] キャラクターの左右移動
+  // キャラクターを描く
+  fill(0);
+  ellipse(x, y, size, size);
+  
+  if(keyIsDown(" ".charCodeAt(0))){speed = 3}
+  else {speed = 1};
+  if(keyIsDown(LEFT_ARROW)){vx = -5 * speed} 
+  else if(keyIsDown(RIGHT_ARROW)){vx = 5 * speed}
+  else{vx = 0} // BLANK[1] キャラクターの左右移動
 
   // BLANK[2] 重力とジャンプ
 
@@ -36,7 +46,5 @@ function draw(){
   x += vx;
   y += vy;
 
-  // キャラクターを描く
-  fill(0);
-  ellipse(x, y, size, size);
+  
 }
