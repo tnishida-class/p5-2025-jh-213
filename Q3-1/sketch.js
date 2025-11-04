@@ -21,10 +21,10 @@ count = (count + speed) % cycle;
   }
 
   function keyPressed(){
-    speed = 5;} // BLANK[2]
-  
+    speed = 5;
+  }
   function keyReleased(){
-    speed = 1};
-
+    speed = 1;
+  }
 
   
