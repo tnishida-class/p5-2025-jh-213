@@ -30,8 +30,6 @@ function draw(){
   fill(0);
   ellipse(x, y, size, size);
   
-  if(keyIsDown(" ".charCodeAt(0))){speed = 3}
-  else {speed = 1};
   if(keyIsDown(LEFT_ARROW)){vx = -5 * speed} 
   else if(keyIsDown(RIGHT_ARROW)){vx = 5 * speed}
   else{vx = 0} // BLANK[1] キャラクターの左右移動
